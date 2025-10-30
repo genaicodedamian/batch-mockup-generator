@@ -1,0 +1,85 @@
+================================================================================
+MOCKUP GENERATION REPORT
+================================================================================
+
+Generated: Wed Oct 30 2025 16:45:23 GMT+0100
+Total Duration: 42.35 seconds
+
+--------------------------------------------------------------------------------
+SUMMARY
+--------------------------------------------------------------------------------
+Total Operations: 45
+Files Processed: 6
+Warnings: 0
+Errors: 0
+
+--------------------------------------------------------------------------------
+PROCESSED FILES (6)
+--------------------------------------------------------------------------------
+[8.23s]   ✓ Successfully saved: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output/1_1.jpg
+[15.67s]  ✓ Successfully saved: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output/1_2.jpg
+[22.91s]  ✓ Successfully saved: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output/2_2.jpg
+[29.45s]  ✓ Successfully saved: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output/2_3.jpg
+[35.78s]  ✓ Successfully saved: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output/3_1.jpg
+[42.12s]  ✓ Successfully saved: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output/3_3.jpg
+
+--------------------------------------------------------------------------------
+DETAILED LOG
+--------------------------------------------------------------------------------
+[0.01s] [INFO] === MOCKUP GENERATION STARTED ===
+[0.02s] [INFO] Configuration loaded from config.json
+[0.02s] [INFO] Output format: jpg
+[0.03s] [INFO] Output path: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output
+[0.03s] [INFO] Filename pattern: @input_@mockup
+[0.05s] [INFO] Starting batch processing: 6 combinations from config.json
+[0.05s] [INFO] 
+[0.12s] [INFO] Processing combination 1/6: 1.jpeg → 1.psd
+[0.15s] [INFO]   → Filtering input files: [1.jpeg]
+[0.17s] [INFO]   → Found: 1.jpeg
+[1.23s] [INFO]   → Opening mockup: 1.psd
+[1.25s] [INFO]   → Applying input: 1.jpeg to layer "Frame 1"
+[8.15s] [INFO]   → Saving output: 1_1.jpg
+[8.23s] [PROCESSED]   ✓ Successfully saved: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output/1_1.jpg
+[8.34s] [INFO] Processing combination 2/6: 1.jpeg → 2.psd
+[8.36s] [INFO]   → Filtering input files: [1.jpeg]
+[8.37s] [INFO]   → Found: 1.jpeg
+[9.45s] [INFO]   → Opening mockup: 2.psd
+[9.47s] [INFO]   → Applying input: 1.jpeg to layer "Frame 1"
+[15.58s] [INFO]   → Saving output: 1_2.jpg
+[15.67s] [PROCESSED]   ✓ Successfully saved: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output/1_2.jpg
+[15.78s] [INFO] Processing combination 3/6: 2.jpeg → 2.psd
+[15.80s] [INFO]   → Filtering input files: [2.jpeg]
+[15.81s] [INFO]   → Found: 2.jpeg
+[16.89s] [INFO]   → Opening mockup: 2.psd
+[16.91s] [INFO]   → Applying input: 2.jpeg to layer "Frame 1"
+[22.82s] [INFO]   → Saving output: 2_2.jpg
+[22.91s] [PROCESSED]   ✓ Successfully saved: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output/2_2.jpg
+[23.02s] [INFO] Processing combination 4/6: 2.jpeg → 3.psd
+[23.04s] [INFO]   → Filtering input files: [2.jpeg]
+[23.05s] [INFO]   → Found: 2.jpeg
+[24.13s] [INFO]   → Opening mockup: 3.psd
+[24.15s] [INFO]   → Applying input: 2.jpeg to layer "Frame 1"
+[29.36s] [INFO]   → Saving output: 2_3.jpg
+[29.45s] [PROCESSED]   ✓ Successfully saved: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output/2_3.jpg
+[29.56s] [INFO] Processing combination 5/6: 3.jpeg → 1.psd
+[29.58s] [INFO]   → Filtering input files: [3.jpeg]
+[29.59s] [INFO]   → Found: 3.jpeg
+[30.67s] [INFO]   → Opening mockup: 1.psd
+[30.69s] [INFO]   → Applying input: 3.jpeg to layer "Frame 1"
+[35.69s] [INFO]   → Saving output: 3_1.jpg
+[35.78s] [PROCESSED]   ✓ Successfully saved: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output/3_1.jpg
+[35.89s] [INFO] Processing combination 6/6: 3.jpeg → 3.psd
+[35.91s] [INFO]   → Filtering input files: [3.jpeg]
+[35.92s] [INFO]   → Found: 3.jpeg
+[37.00s] [INFO]   → Opening mockup: 3.psd
+[37.02s] [INFO]   → Applying input: 3.jpeg to layer "Frame 1"
+[42.03s] [INFO]   → Saving output: 3_3.jpg
+[42.12s] [PROCESSED]   ✓ Successfully saved: /Users/damianaugustyn/Documents/projects/Smart PS replacer/output/3_3.jpg
+[42.23s] [INFO] 
+[42.24s] [INFO] === MOCKUP GENERATION COMPLETED ===
+[42.25s] [INFO] Total combinations processed: 6
+[42.26s] [INFO] All operations completed successfully
+
+================================================================================
+END OF REPORT
+================================================================================

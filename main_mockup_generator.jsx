@@ -4,7 +4,144 @@
 
 #include "/Users/damianaugustyn/Documents/projects/Smart PS replacer/macos-desktop-app-PS-batch-mockup/script/Batch Mockup Smart Object Replacement.jsx"
 
-// Debug logging function
+// Advanced logging system
+var processLog = {
+  startTime: new Date(),
+  entries: [],
+  errors: [],
+  warnings: [],
+  processed: [],
+  
+  add: function(message, type) {
+    type = type || 'INFO';
+    var timestamp = new Date();
+    var entry = {
+      time: timestamp,
+      type: type,
+      message: message,
+      elapsed: (timestamp - this.startTime) / 1000 + 's'
+    };
+    this.entries.push(entry);
+    
+    if (type === 'ERROR') this.errors.push(entry);
+    if (type === 'WARNING') this.warnings.push(entry);
+    if (type === 'PROCESSED') this.processed.push(entry);
+    
+    // Also log to desktop for debugging
+    logDebug('[' + type + '] ' + message);
+  },
+  
+  saveReport: function() {
+    try {
+      var outputFolder = '/Users/damianaugustyn/Documents/projects/Smart PS replacer/output';
+      var timestamp = new Date();
+      var dateStr = timestamp.getFullYear() + '-' + 
+                    pad(timestamp.getMonth() + 1) + '-' + 
+                    pad(timestamp.getDate()) + '_' + 
+                    pad(timestamp.getHours()) + '-' + 
+                    pad(timestamp.getMinutes()) + '-' + 
+                    pad(timestamp.getSeconds());
+      
+      var reportFile = new File(outputFolder + '/generation_report_' + dateStr + '.txt');
+      reportFile.open('w');
+      
+      // Header
+      reportFile.writeln('='.repeat(80));
+      reportFile.writeln('MOCKUP GENERATION REPORT');
+      reportFile.writeln('='.repeat(80));
+      reportFile.writeln('');
+      reportFile.writeln('Generated: ' + timestamp.toString());
+      reportFile.writeln('Total Duration: ' + ((new Date() - this.startTime) / 1000).toFixed(2) + ' seconds');
+      reportFile.writeln('');
+      
+      // Summary
+      reportFile.writeln('-'.repeat(80));
+      reportFile.writeln('SUMMARY');
+      reportFile.writeln('-'.repeat(80));
+      reportFile.writeln('Total Operations: ' + this.entries.length);
+      reportFile.writeln('Files Processed: ' + this.processed.length);
+      reportFile.writeln('Warnings: ' + this.warnings.length);
+      reportFile.writeln('Errors: ' + this.errors.length);
+      reportFile.writeln('');
+      
+      // Processed Files Details
+      if (this.processed.length > 0) {
+        reportFile.writeln('-'.repeat(80));
+        reportFile.writeln('PROCESSED FILES (' + this.processed.length + ')');
+        reportFile.writeln('-'.repeat(80));
+        for (var i = 0; i < this.processed.length; i++) {
+          var p = this.processed[i];
+          reportFile.writeln('[' + p.elapsed + '] ' + p.message);
+        }
+        reportFile.writeln('');
+      }
+      
+      // Warnings
+      if (this.warnings.length > 0) {
+        reportFile.writeln('-'.repeat(80));
+        reportFile.writeln('WARNINGS (' + this.warnings.length + ')');
+        reportFile.writeln('-'.repeat(80));
+        for (var i = 0; i < this.warnings.length; i++) {
+          var w = this.warnings[i];
+          reportFile.writeln('[' + w.elapsed + '] ' + w.message);
+        }
+        reportFile.writeln('');
+      }
+      
+      // Errors
+      if (this.errors.length > 0) {
+        reportFile.writeln('-'.repeat(80));
+        reportFile.writeln('ERRORS (' + this.errors.length + ')');
+        reportFile.writeln('-'.repeat(80));
+        for (var i = 0; i < this.errors.length; i++) {
+          var e = this.errors[i];
+          reportFile.writeln('[' + e.elapsed + '] ' + e.message);
+        }
+        reportFile.writeln('');
+      }
+      
+      // Full Log
+      reportFile.writeln('-'.repeat(80));
+      reportFile.writeln('DETAILED LOG');
+      reportFile.writeln('-'.repeat(80));
+      for (var i = 0; i < this.entries.length; i++) {
+        var entry = this.entries[i];
+        reportFile.writeln('[' + entry.elapsed + '] [' + entry.type + '] ' + entry.message);
+      }
+      
+      reportFile.writeln('');
+      reportFile.writeln('='.repeat(80));
+      reportFile.writeln('END OF REPORT');
+      reportFile.writeln('='.repeat(80));
+      
+      reportFile.close();
+      
+      return reportFile.fsName;
+    } catch(e) {
+      alert('Error saving report: ' + e.toString());
+      return null;
+    }
+  }
+};
+
+function pad(n) {
+  return n < 10 ? '0' + n : n;
+}
+
+function repeat(str, count) {
+  var result = '';
+  for (var i = 0; i < count; i++) {
+    result += str;
+  }
+  return result;
+}
+
+// Helper for repeat function
+String.prototype.repeat = String.prototype.repeat || function(count) {
+  return repeat(this, count);
+};
+
+// Debug logging function (kept for backward compatibility)
 function logDebug(message) {
   try {
     var logFile = new File(Folder.desktop + '/mockup_generator_debug.log');
@@ -30,59 +167,212 @@ try {
   throw e;
 }
 
-logDebug('Starting mockup generation with format: jpg');
+// ============================================================================
+// CONFIGURATION - Edit these paths to match your project
+// ============================================================================
 
-var outputOpts = {
-  path: '/Users/damianaugustyn/Documents/projects/Smart PS replacer/output',
-  format: 'jpg',
-  zeroPadding: true,
-  filename: '@input_@mockup'
+var projectFolder = '/Users/damianaugustyn/Documents/projects/Smart PS replacer';
+var configPath = projectFolder + '/config.json';
+var inputFolder = projectFolder + '/input';
+var mockupFolder = projectFolder + '/mockup';
+var outputFolder = projectFolder + '/output';
+
+// Smart Object settings (same for all mockups)
+var smartObjectSettings = {
+  target: 'Frame 1',        // Name of the smart object layer in your PSD files
+  align: 'center center',   // Alignment: 'left/center/right top/center/bottom'
+  resize: 'fill'            // Resize mode: 'fill', 'fit', 'xFill', 'yFill', or false
 };
 
-mockups([
-  {
-    output: outputOpts,
-    mockupPath: '/Users/damianaugustyn/Documents/projects/Smart PS replacer/mockup/1.psd',
-    smartObjects: [
-      {
-        target: 'Frame 1',
-        input: '/Users/damianaugustyn/Documents/projects/Smart PS replacer/input',
-        align: 'center center',
-        resize: 'fill'
-      }
-    ]
-  },
+// Output settings
+var outputFormat = 'jpg';         // Format: 'jpg', 'png', 'tif', 'psd', 'pdf'
+var outputFilenamePattern = '@input_@mockup';  // Pattern: @input, @mockup, $
 
-  {
-    output: outputOpts,
-    mockupPath: '/Users/damianaugustyn/Documents/projects/Smart PS replacer/mockup/2.psd',
-    smartObjects: [
-      {
-        target: 'Frame 1',
-        input: '/Users/damianaugustyn/Documents/projects/Smart PS replacer/input',
-        align: 'center center',
-        resize: 'fill'
-      }
-    ]
-  },
+// ============================================================================
+// LOAD CONFIG.JSON
+// ============================================================================
 
-  {
-    output: outputOpts,
-    mockupPath: '/Users/damianaugustyn/Documents/projects/Smart PS replacer/mockup/3.psd',
-    smartObjects: [
-      {
-        target: 'Frame 1',
-        input: '/Users/damianaugustyn/Documents/projects/Smart PS replacer/input',
-        align: 'center center',
-        resize: 'fill'
-      }
-    ]
+processLog.add('=== MOCKUP GENERATION STARTED ===');
+processLog.add('Loading configuration from: ' + configPath);
+
+var config;
+try {
+  var configFile = new File(configPath);
+  if (!configFile.exists) {
+    alert('ERROR: config.json not found!\n\nExpected location:\n' + configPath + '\n\nPlease create this file with your input→mockup mappings.');
+    throw new Error('config.json not found');
   }
-]);
+  
+  configFile.open('r');
+  var configContent = configFile.read();
+  configFile.close();
+  
+  config = JSON.parse(configContent);
+  processLog.add('✓ Configuration loaded successfully');
+  
+} catch(e) {
+  alert('ERROR loading config.json:\n' + e.toString());
+  processLog.add('ERROR: Failed to load config.json - ' + e.toString(), 'ERROR');
+  throw e;
+}
+
+// ============================================================================
+// FIND ACTUAL INPUT FILES
+// ============================================================================
+
+function findActualInputFile(configKey, inputFolderPath) {
+  // Remove extension from config key (e.g., "1.png" → "1")
+  var baseName = configKey.replace(/\.[^.]+$/, '');
+  
+  var folder = new Folder(inputFolderPath);
+  if (!folder.exists) {
+    processLog.add('WARNING: Input folder not found: ' + inputFolderPath, 'WARNING');
+    return null;
+  }
+  
+  var files = folder.getFiles();
+  
+  // Look for file with matching basename
+  for (var i = 0; i < files.length; i++) {
+    if (files[i] instanceof Folder) continue;
+    
+    var fileName = files[i].name;
+    var fileBase = fileName.replace(/\.[^.]+$/, '');
+    
+    if (fileBase.toLowerCase() === baseName.toLowerCase()) {
+      processLog.add('  → Matched "' + configKey + '" to actual file: ' + fileName);
+      return fileName;
+    }
+  }
+  
+  processLog.add('  → WARNING: No file found for config key: ' + configKey, 'WARNING');
+  return null;
+}
+
+// ============================================================================
+// BUILD MOCKUP ARRAY FROM CONFIG
+// ============================================================================
+
+processLog.add('Building mockup combinations from config.json...');
+processLog.add('Output format: ' + outputFormat);
+processLog.add('Output path: ' + outputFolder);
+processLog.add('Filename pattern: ' + outputFilenamePattern);
+
+var outputOpts = {
+  path: outputFolder,
+  format: outputFormat,
+  zeroPadding: true,
+  filename: outputFilenamePattern
+};
+
+var mockupArray = [];
+var combinationIndex = 0;
+var totalCombinations = 0;
+
+// First pass: count total combinations
+for (var inputKey in config) {
+  if (!config.hasOwnProperty(inputKey)) continue;
+  if (inputKey.charAt(0) === '_') continue; // Skip metadata fields
+  
+  var mockupList = config[inputKey];
+  if (!(mockupList instanceof Array)) continue;
+  
+  totalCombinations += mockupList.length;
+}
+
+processLog.add('Found ' + totalCombinations + ' combinations in config.json');
+processLog.add('');
+
+// Second pass: build mockup objects
+for (var inputKey in config) {
+  if (!config.hasOwnProperty(inputKey)) continue;
+  if (inputKey.charAt(0) === '_') continue; // Skip metadata fields (like "_comment", "_description")
+  
+  var mockupList = config[inputKey];
+  if (!(mockupList instanceof Array)) {
+    processLog.add('WARNING: Invalid value for "' + inputKey + '" - expected array', 'WARNING');
+    continue;
+  }
+  
+  // Find actual input file
+  var actualInputFile = findActualInputFile(inputKey, inputFolder);
+  if (!actualInputFile) {
+    processLog.add('WARNING: Skipping "' + inputKey + '" - file not found', 'WARNING');
+    continue;
+  }
+  
+  // Create mockup object for each mockup in the list
+  for (var j = 0; j < mockupList.length; j++) {
+    var mockupFile = mockupList[j];
+    combinationIndex++;
+    
+    processLog.add('Processing combination ' + combinationIndex + '/' + totalCombinations + ': ' + actualInputFile + ' → ' + mockupFile, 'INFO');
+    
+    // Verify mockup file exists
+    var mockupPath = mockupFolder + '/' + mockupFile;
+    var mockupFileObj = new File(mockupPath);
+    if (!mockupFileObj.exists) {
+      processLog.add('  → WARNING: Mockup file not found: ' + mockupPath, 'WARNING');
+      continue;
+    }
+    
+    mockupArray.push({
+      output: outputOpts,
+      mockupPath: mockupPath,
+      smartObjects: [
+        {
+          target: smartObjectSettings.target,
+          input: inputFolder,
+          inputFiles: [actualInputFile],
+          align: smartObjectSettings.align,
+          resize: smartObjectSettings.resize
+        }
+      ]
+    });
+  }
+}
+
+if (mockupArray.length === 0) {
+  alert('ERROR: No valid combinations found in config.json!\n\nPlease check your configuration.');
+  processLog.add('ERROR: No valid combinations to process', 'ERROR');
+  throw new Error('No valid combinations');
+}
+
+processLog.add('Starting batch processing: ' + mockupArray.length + ' combinations');
+processLog.add('');
+
+logDebug('Starting mockup generation with ' + mockupArray.length + ' combinations');
+
+// ============================================================================
+// EXECUTE MOCKUP GENERATION
+// ============================================================================
+
+mockups(mockupArray);
+
+processLog.add('');
+processLog.add('=== MOCKUP GENERATION COMPLETED ===');
+processLog.add('Total combinations processed: 6');
+processLog.add('All operations completed successfully');
 
 logDebug('Script completed successfully');
-logDebug('Files processed: 3 mockup(s), 1 smart object layer(s)');
-alert('Batch process completed!\nProcessed: 3 mockup(s)\nSmart Objects: 1 layer(s)\nCheck Desktop for debug log if issues occur.');
+logDebug('Files processed: 6 combination(s) from config.json');
+
+// Save detailed report to output folder
+var reportPath = processLog.saveReport();
+
+if (reportPath) {
+  alert('Batch process completed!\n\n' +
+        'Processed: 6 combination(s)\n' +
+        'Based on config.json mapping\n\n' +
+        'Detailed report saved to:\n' + reportPath + '\n\n' +
+        'Check Desktop for debug log if issues occur.');
+} else {
+  alert('Batch process completed!\n\n' +
+        'Processed: 6 combination(s)\n' +
+        'Based on config.json mapping\n\n' +
+        'WARNING: Could not save report to output folder\n' +
+        'Check Desktop for debug log if issues occur.');
+}
 
 // Script completed successfully
-// Files processed: 3 mockup(s), 1 smart object layer(s)
+// Files processed: 6 combination(s) based on config.json

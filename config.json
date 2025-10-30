@@ -1,4 +1,22 @@
 {
+  "_comment": "=== MOCKUP CONFIGURATION FILE ===",
+  "_description": "This file defines which input files should be applied to which mockup files",
+  "_format": {
+    "key": "Input filename (can use any extension, e.g., '1.png' will match '1.jpeg')",
+    "value": "Array of mockup filenames from the 'mockup' folder"
+  },
+  "_example": {
+    "input-file.png": ["mockup1.psd", "mockup2.psd"],
+    "another-input.jpg": ["mockup3.psd"]
+  },
+  "_notes": [
+    "Keys match by basename (without extension): '1.png' matches '1.jpeg', '1.jpg', etc.",
+    "Values are arrays of mockup filenames (must exist in 'mockup' folder)",
+    "Each key-value pair creates N output files (N = array length)",
+    "Output files are named: inputBasename_mockupBasename.jpg"
+  ],
+  "_lastModified": "2025-10-30",
+
   "1.png": ["1.psd", "2.psd"],
   "2.png": ["2.psd", "3.psd"],
   "3.png": ["1.psd", "3.psd"]
