@@ -1,0 +1,95 @@
+--- Raport kompletności plików ---
+Data sprawdzenia: 2025-11-01 00:29:20
+
+❌ Znaleziono braki w folderze 'input' (52 z 52):
+  - gracias_aquablue_back.png
+  - gracias_black_back.png
+  - gracias_black_front.png
+  - gracias_black_onesie.png
+  - gracias_black_totebag.png
+  - gracias_blue_back.png
+  - gracias_blue_front.png
+  - gracias_blue_hoodie.png
+  - gracias_bluesoul_back.png
+  - gracias_brown_back.png
+  - gracias_burgundy_back.png
+  - gracias_cream_back.png
+  - gracias_cream_front.png
+  - gracias_cream_hoodie.png
+  - gracias_cream_totebag.png
+  - gracias_darkchocolate_back.png
+  - gracias_darkgrey_back.png
+  - gracias_darkgrey_front.png
+  - gracias_fiesta_back.png
+  - gracias_fullprint_cushion.png
+  - gracias_fullprint_uglysweater.png
+  - gracias_glazedgreen_back.png
+  - gracias_green_back.png
+  - gracias_grey_back.png
+  - gracias_grey_front.png
+  - gracias_grey_totebag.png
+  - gracias_irishgreen_back.png
+  - gracias_khaki_back.png
+  - gracias_lightblue_back.png
+  - gracias_lightblue_onesie.png
+  - gracias_navy_back.png
+  - gracias_navy_front.png
+  - gracias_navy_onesie.png
+  - gracias_orange_back.png
+  - gracias_orange_front.png
+  - gracias_pink_back.png
+  - gracias_pink_front.png
+  - gracias_pink_onesie.png
+  - gracias_purple_back.png
+  - gracias_red_back.png
+  - gracias_red_front.png
+  - gracias_red_trucker.png
+  - gracias_sand_back.png
+  - gracias_sand_front.png
+  - gracias_white_back.png
+  - gracias_white_front.png
+  - gracias_white_mug.png
+  - gracias_white_onesie.png
+  - gracias_yellow_back.png
+  - gracias_yellow_onesie.png
+  - sweatshirt_oversize_black.png
+  - sweatshirt_oversize_cream.png
+
+❌ Znaleziono braki w folderze 'mockup' (35 z 117):
+  - cap_trucker_cap.psd
+  - grey_closeup.psd
+  - hoodie_kid_blue_back.psd
+  - hoodie_kid_blue_front.psd
+  - hoodie_kid_grey_back.psd
+  - onesie.psd
+  - sleeve.psd
+  - sweatshirt_kid_black_back.psd
+  - sweatshirt_kid_black_front.psd
+  - sweatshirt_kid_blue_back.psd
+  - sweatshirt_kid_green_back.psd
+  - sweatshirt_kid_red_back.psd
+  - sweatshirt_kid_white_back.psd
+  - t-shirt_aquablue_back.psd
+  - t-shirt_bluesoul_back.psd
+  - t-shirt_grey_back.psd
+  - t-shirt_kid_darkchocolate_back.psd
+  - t-shirt_kid_darkgrey_back.psd
+  - t-shirt_kid_pink_back.psd
+  - t-shirt_oversize_grey_back.psd
+  - t-shirt_oversize_navy_back.psd
+  - t-shirt_oversize_navy_collarback.psd
+  - t-shirt_oversize_navy_collarfront.psd
+  - t-shirt_oversize_navy_front.psd
+  - t-shirt_oversize_sand_back.psd
+  - t-shirt_slimfit_grey_back.psd
+  - t-shirt_slimfit_white_front.psd
+  - totebag_black.psd
+  - totebag_cream.psd
+  - totebag_grey.psd
+  - trucker_cap_black_front.psd
+  - trucker_cap_blue_front.psd
+  - trucker_cap_pink_front.psd
+  - trucker_cap_red_front.psd
+  - uglysweater.psd
+
+--- Koniec raportu ---

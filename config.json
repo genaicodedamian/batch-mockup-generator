@@ -1,573 +1,229 @@
 {
-  "_comment": "=== MOCKUP CONFIGURATION FILE ===",
-  "_description": "This file defines which input files should be applied to which mockup files",
-  "_format": {
-    "key": "Input filename (can use any extension, e.g., '1.png' will match '1.jpeg')",
-    "value": "Array of mockup filenames from the 'mockup' folder"
-  },
-  "_example": {
-    "input-file.png": [
-      "mockup1.psd",
-      "mockup2.psd"
-    ],
-    "another-input.jpg": [
-      "mockup3.psd"
-    ]
-  },
-  "_notes": [
-    "Keys match by basename (without extension): '1.png' matches '1.jpeg', '1.jpg', etc.",
-    "Values are arrays of mockup filenames (must exist in 'mockup' folder)",
-    "Each key-value pair creates N output files (N = array length)",
-    "Output files are named: inputBasename_mockupBasename.jpg"
+  "gracias_navy_back.png": [
+    "t-shirt_kid_navy_back.psd",
+    "t-shirt_slimfit_navy_back.psd",
+    "t-shirt_navy_back.psd",
+    "hoodie_navy_back.psd",
+    "t-shirt_oversize_navy_back.psd",
+    "navy_closeup.psd",
+    "t-shirt_oversize_navy_collarback.psd",
+    "sweatshirt_navy_back.psd"
   ],
-  "_lastModified": "2025-10-30",
-  "_generatedFrom": "extracted_images.txt",
-  "_totalInputFiles": 228,
-  "_totalCombinations": 2690,
-  "176.png": [
-    "37.psd",
-    "4c.psd",
-    "55.psd",
-    "57.psd",
-    "5c.psd",
-    "7.psd",
-    "78.psd",
-    "8c.psd",
-    "90.psd",
-    "96.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_navy_front.png": [
+    "t-shirt_kid_navy_front.psd",
+    "t-shirt_oversize_navy_front.psd",
+    "t-shirt_oversize_navy_collarfront.psd"
   ],
-  "232.png": [
-    "102.psd",
-    "15.psd",
-    "2c.psd",
-    "31.psd",
-    "44.psd",
-    "57.psd",
-    "74.psd",
-    "7c.psd",
-    "99.psd",
-    "9c.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_green_back.png": [
+    "t-shirt_kid_green_back.psd",
+    "sweatshirt_kid_green_back.psd"
   ],
-  "233.png": [
-    "10c.psd",
-    "119.psd",
-    "12.psd",
-    "28.psd",
-    "4c.psd",
-    "59.psd",
-    "76.psd",
-    "8c.psd",
-    "92.psd",
-    "99.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_pink_back.png": [
+    "t-shirt_kid_pink_back.psd",
+    "t-shirt_slimfit_pink_back.psd",
+    "t-shirt_pink_back.psd",
+    "hoodie_pink_back.psd"
   ],
-  "234.png": [
-    "10c.psd",
-    "111.psd",
-    "120.psd",
-    "29.psd",
-    "2c.psd",
-    "44.psd",
-    "46.psd",
-    "6c.psd",
-    "70.psd",
-    "89.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_grey_back.png": [
+    "t-shirt_kid_grey_back.psd",
+    "t-shirt_slimfit_grey_back.psd",
+    "t-shirt_grey_back.psd",
+    "hoodie_grey_back.psd",
+    "t-shirt_oversize_grey_back.psd",
+    "sweatshirt_grey_back.psd",
+    "sweatshirt_grey_back2.psd",
+    "grey_closeup.psd",
+    "hoodie_kid_grey_back.psd"
   ],
-  "235.png": [
-    "12.psd",
-    "13.psd",
-    "44.psd",
-    "56.psd",
-    "66.psd",
-    "68.psd",
-    "6c.psd",
-    "86.psd",
-    "8c.psd",
-    "9c.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_darkgrey_back.png": [
+    "t-shirt_kid_darkgrey_back.psd",
+    "t-shirt_slimfit_darkgrey_back.psd",
+    "t-shirt_darkgrey_back.psd",
+    "darkgrey_closeup.psd",
+    "hoodie_darkgrey_back.psd"
   ],
-  "O01.png": [
-    "16h.psd",
-    "1ch.psd",
-    "20h.psd",
-    "23h.psd",
-    "25h.psd",
-    "2ch.psd",
-    "5h.psd",
-    "canvash.psd",
-    "frameh.psd",
-    "mainh.psd",
-    "posterh.psd"
+  "gracias_black_back.png": [
+    "t-shirt_kid_black_back.psd",
+    "t-shirt_slimfit_black_back.psd",
+    "t-shirt_black_back.psd",
+    "hoodie_black_back.psd",
+    "t-shirt_oversize_black_back.psd",
+    "sweatshirt_oversize_black_back.psd",
+    "black_closeup.psd",
+    "sweatshirt_black_back.psd",
+    "hoodie_kid_black_back.psd",
+    "sweatshirt_kid_black_back.psd"
   ],
-  "O02.png": [
-    "100.psd",
-    "104.psd",
-    "10c.psd",
-    "117.psd",
-    "20.psd",
-    "27.psd",
-    "3c.psd",
-    "67.psd",
-    "8c.psd",
-    "99.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_blue_back.png": [
+    "t-shirt_kid_blue_back.psd",
+    "t-shirt_slimfit_blue_back.psd",
+    "hoodie_kid_blue_back.psd",
+    "sweatshirt_kid_blue_back.psd"
   ],
-  "O03.png": [
-    "122.psd",
-    "18.psd",
-    "1c.psd",
-    "20.psd",
-    "3c.psd",
-    "51.psd",
-    "6.psd",
-    "73.psd",
-    "7c.psd",
-    "8.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_red_back.png": [
+    "t-shirt_kid_red_back.psd",
+    "t-shirt_slimfit_red_back.psd",
+    "t-shirt_red_back.psd",
+    "hoodie_red_back.psd",
+    "sweatshirt_red_back.psd",
+    "hoodie_kid_red_back.psd",
+    "sweatshirt_kid_red_back.psd"
   ],
-  "O05.png": [
-    "10h.psd",
-    "12h.psd",
-    "16h.psd",
-    "1ch.psd",
-    "2ch.psd",
-    "5h.psd",
-    "8h.psd",
-    "canvash.psd",
-    "frameh.psd",
-    "mainh.psd",
-    "posterh.psd"
+  "gracias_lightblue_back.png": [
+    "t-shirt_kid_lightblue_back.psd",
+    "t-shirt_slimfit_lightblue_back.psd"
   ],
-  "O06.png": [
-    "106.psd",
-    "1c.psd",
-    "39.psd",
-    "40.psd",
-    "4c.psd",
-    "54.psd",
-    "56.psd",
-    "6.psd",
-    "7.psd",
-    "9c.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_purple_back.png": [
+    "t-shirt_kid_purple_back.psd"
   ],
-  "O07.png": [
-    "103.psd",
-    "111.psd",
-    "28.psd",
-    "2c.psd",
-    "35.psd",
-    "41.psd",
-    "4c.psd",
-    "60.psd",
-    "6c.psd",
-    "8.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_yellow_back.png": [
+    "t-shirt_kid_yellow_back.psd"
   ],
-  "O08.png": [
-    "122.psd",
-    "27.psd",
-    "4c.psd",
-    "53.psd",
-    "64.psd",
-    "68.psd",
-    "6c.psd",
-    "71.psd",
-    "7c.psd",
-    "94.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_darkchocolate_back.png": [
+    "t-shirt_kid_darkchocolate_back.psd"
   ],
-  "O09.png": [
-    "105.psd",
-    "117.psd",
-    "2c.psd",
-    "3c.psd",
-    "45.psd",
-    "58.psd",
-    "68.psd",
-    "77.psd",
-    "8c.psd",
-    "90.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_irishgreen_back.png": [
+    "t-shirt_kid_irishgreen_back.psd"
   ],
-  "O10.png": [
-    "11.psd",
-    "112.psd",
-    "115.psd",
-    "120.psd",
-    "14.psd",
-    "27.psd",
-    "2c.psd",
-    "5c.psd",
-    "63.psd",
-    "9c.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_white_back.png": [
+    "t-shirt_kid_white_back.psd",
+    "t-shirt_slimfit_white_back.psd",
+    "t-shirt_white_back.psd",
+    "hoodie_white_back.psd",
+    "t-shirt_oversize_white_back.psd",
+    "white_closeup.psd",
+    "t-shirt_oversize_white_collarback.psd",
+    "sweatshirt_white_back.psd",
+    "hoodie_kid_white_back.psd",
+    "sweatshirt_kid_white_back.psd"
   ],
-  "O11.png": [
-    "12h.psd",
-    "17h.psd",
-    "1ch.psd",
-    "25h.psd",
-    "27h.psd",
-    "2ch.psd",
-    "3h.psd",
-    "canvash.psd",
-    "frameh.psd",
-    "mainh.psd",
-    "posterh.psd"
+  "gracias_white_front.png": [
+    "t-shirt_slimfit_white_front.psd",
+    "t-shirt_oversize_white_front.psd",
+    "t-shirt_oversize_white_collarfront.psd"
   ],
-  "O12.png": [
-    "109.psd",
-    "10c.psd",
-    "112.psd",
-    "16.psd",
-    "25.psd",
-    "43.psd",
-    "4c.psd",
-    "64.psd",
-    "6c.psd",
-    "76.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_brown_back.png": [
+    "t-shirt_slimfit_brown_back.psd"
   ],
-  "O13.png": [
-    "100.psd",
-    "18.psd",
-    "1c.psd",
-    "58.psd",
-    "60.psd",
-    "6c.psd",
-    "7c.psd",
-    "8.psd",
-    "81.psd",
-    "90.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_white_mug.png": [
+    "mug.psd"
   ],
-  "O14.png": [
-    "10c.psd",
-    "11.psd",
-    "110.psd",
-    "1c.psd",
-    "29.psd",
-    "32.psd",
-    "70.psd",
-    "72.psd",
-    "77.psd",
-    "7c.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_black_totebag.png": [
+    "totebag_black.psd"
   ],
-  "O15.png": [
-    "103.psd",
-    "123.psd",
-    "1c.psd",
-    "25.psd",
-    "2c.psd",
-    "38.psd",
-    "40.psd",
-    "5.psd",
-    "60.psd",
-    "7c.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_grey_totebag.png": [
+    "totebag_grey.psd"
   ],
-  "O16.png": [
-    "18.psd",
-    "1c.psd",
-    "2c.psd",
-    "3.psd",
-    "4.psd",
-    "6.psd",
-    "61.psd",
-    "64.psd",
-    "7c.psd",
-    "9.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_cream_totebag.png": [
+    "totebag_cream.psd"
   ],
-  "O17.png": [
-    "104.psd",
-    "111.psd",
-    "14.psd",
-    "2c.psd",
-    "35.psd",
-    "5c.psd",
-    "82.psd",
-    "92.psd",
-    "97.psd",
-    "9c.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_orange_back.png": [
+    "t-shirt_orange_back.psd",
+    "orange_closeup.psd"
   ],
-  "O18.png": [
-    "17h.psd",
-    "19h.psd",
-    "1ch.psd",
-    "21h.psd",
-    "28h.psd",
-    "2ch.psd",
-    "7h.psd",
-    "canvash.psd",
-    "frameh.psd",
-    "mainh.psd",
-    "posterh.psd"
+  "gracias_orange_front.png": [
+    "t-shirt_orange_front.psd"
   ],
-  "O19.png": [
-    "19h.psd",
-    "1ch.psd",
-    "1h.psd",
-    "2ch.psd",
-    "2h.psd",
-    "5h.psd",
-    "6h.psd",
-    "canvash.psd",
-    "frameh.psd",
-    "mainh.psd",
-    "posterh.psd"
+  "gracias_aquablue_back.png": [
+    "t-shirt_aquablue_back.psd"
   ],
-  "O22.png": [
-    "18h.psd",
-    "1ch.psd",
-    "23h.psd",
-    "24h.psd",
-    "25h.psd",
-    "2ch.psd",
-    "2h.psd",
-    "canvash.psd",
-    "frameh.psd",
-    "mainh.psd",
-    "posterh.psd"
+  "gracias_glazedgreen_back.png": [
+    "t-shirt_glazedgreen_back.psd"
   ],
-  "O23.png": [
-    "17h.psd",
-    "19h.psd",
-    "1ch.psd",
-    "28h.psd",
-    "29h.psd",
-    "2ch.psd",
-    "9h.psd",
-    "canvash.psd",
-    "frameh.psd",
-    "mainh.psd",
-    "posterh.psd"
+  "gracias_sand_back.png": [
+    "t-shirt_sand_back.psd",
+    "hoodie_sand_back.psd",
+    "t-shirt_oversize_sand_back.psd",
+    "sweatshirt_sand_back.psd",
+    "sweatshirt_sand_back2.psd",
+    "sand_closeup.psd"
   ],
-  "O24.png": [
-    "14n.psd",
-    "15n.psd",
-    "1n.psd",
-    "22n.psd",
-    "5n.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_bluesoul_back.png": [
+    "t-shirt_bluesoul_back.psd"
   ],
-  "O25.png": [
-    "17n.psd",
-    "18n.psd",
-    "22n.psd",
-    "8n.psd",
-    "9n.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_cream_back.png": [
+    "t-shirt_cream_back.psd",
+    "hoodie_cream_back.psd",
+    "hoodie_cream_closeupback.psd",
+    "sweatshirt_oversize_cream_back.psd",
+    "cream_closeup.psd"
   ],
-  "O26.png": [
-    "13n.psd",
-    "15n.psd",
-    "16n.psd",
-    "19n.psd",
-    "1n.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_khaki_back.png": [
+    "t-shirt_khaki_back.psd"
   ],
-  "O27.png": [
-    "10n.psd",
-    "13n.psd",
-    "15n.psd",
-    "17n.psd",
-    "21n.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_burgundy_back.png": [
+    "t-shirt_burgundy_back.psd",
+    "hoodie_burgundy_back.psd"
   ],
-  "O28.png": [
-    "109.psd",
-    "10c.psd",
-    "11.psd",
-    "17.psd",
-    "24.psd",
-    "4.psd",
-    "44.psd",
-    "4c.psd",
-    "7c.psd",
-    "97.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_fiesta_back.png": [
+    "t-shirt_fiesta_back.psd"
   ],
-  "O29.png": [
-    "10c.psd",
-    "110.psd",
-    "16.psd",
-    "1c.psd",
-    "2c.psd",
-    "31.psd",
-    "32.psd",
-    "46.psd",
-    "50.psd",
-    "75.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_darkgrey_front.png": [
+    "t-shirt_darkgrey_front.psd"
   ],
-  "O30.png": [
-    "101.psd",
-    "122.psd",
-    "124.psd",
-    "25.psd",
-    "4c.psd",
-    "53.psd",
-    "69.psd",
-    "6c.psd",
-    "77.psd",
-    "8c.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_cream_hoodie.png": [
+    "hoodie_cream_front.psd",
+    "hoodie_cream_closeupfront.psd"
   ],
-  "O31.png": [
-    "106.psd",
-    "10c.psd",
-    "12.psd",
-    "27.psd",
-    "36.psd",
-    "3c.psd",
-    "48.psd",
-    "83.psd",
-    "88.psd",
-    "8c.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_red_trucker.png": [
+    "cap_trucker_cap.psd"
   ],
-  "O32.png": [
-    "106.psd",
-    "10c.psd",
-    "118.psd",
-    "124.psd",
-    "1c.psd",
-    "48.psd",
-    "54.psd",
-    "5c.psd",
-    "72.psd",
-    "76.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_pink_front.png": [
+    "trucker_cap_pink_front.psd"
   ],
-  "O33.png": [
-    "114.psd",
-    "22.psd",
-    "2c.psd",
-    "3c.psd",
-    "47.psd",
-    "4c.psd",
-    "54.psd",
-    "67.psd",
-    "71.psd",
-    "98.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_black_front.png": [
+    "trucker_cap_black_front.psd",
+    "sweatshirt_oversize_black_front.psd",
+    "sweatshirt_kid_black_front.psd"
   ],
-  "O34.png": [
-    "10c.psd",
-    "124.psd",
-    "15.psd",
-    "33.psd",
-    "46.psd",
-    "5c.psd",
-    "65.psd",
-    "6c.psd",
-    "75.psd",
-    "76.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_blue_front.png": [
+    "trucker_cap_blue_front.psd"
   ],
-  "O35.png": [
-    "21n.psd",
-    "22n.psd",
-    "3n.psd",
-    "4n.psd",
-    "7n.psd",
-    "canvas.psd",
-    "frame.psd",
-    "main.psd",
-    "poster.psd"
+  "gracias_red_front.png": [
+    "trucker_cap_red_front.psd"
+  ],
+  "sweatshirt_oversize_black.png": [
+    "sleeve.psd"
+  ],
+  "gracias_cream_front.png": [
+    "sweatshirt_oversize_cream_front.psd"
+  ],
+  "sweatshirt_oversize_cream.png": [
+    "sleeve.psd"
+  ],
+  "gracias_sand_front.png": [
+    "sweatshirt_sand_front.psd",
+    "sweatshirt_sand_front2.psd"
+  ],
+  "gracias_grey_front.png": [
+    "sweatshirt_grey_front.psd",
+    "sweatshirt_grey_front2.psd"
+  ],
+  "gracias_blue_hoodie.png": [
+    "hoodie_kid_blue_front.psd"
+  ],
+  "gracias_pink_onesie.png": [
+    "onesie.psd"
+  ],
+  "gracias_navy_onesie.png": [
+    "onesie.psd"
+  ],
+  "gracias_lightblue_onesie.png": [
+    "onesie.psd"
+  ],
+  "gracias_white_onesie.png": [
+    "onesie.psd"
+  ],
+  "gracias_yellow_onesie.png": [
+    "onesie.psd"
+  ],
+  "gracias_black_onesie.png": [
+    "onesie.psd"
+  ],
+  "gracias_fullprint_cushion.png": [
+    "cushion.psd"
+  ],
+  "gracias_fullprint_uglysweater.png": [
+    "uglysweater.psd"
   ]
 }
